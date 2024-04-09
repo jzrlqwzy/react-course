@@ -172,10 +172,14 @@ const updatedBook = {
 };
 console.log(updatedBook);
 
+// Arrow Functions
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
+
 // Template Literals
-const summary = `${title}, is a ${pages}-page long book, was written by ${author} and published in ${
-  publicationDate.split("-")[0]
-}. The book has ${hasMovieAdaptation ? "" : "not"}been adapted as a movie`;
+const summary = `${title}, is a ${pages}-page long book, was written by ${author} and published in ${getYear(
+  publicationDate
+)}. The book has ${hasMovieAdaptation ? "" : "not"}been adapted as a movie`;
 console.log(publicationDate);
 console.log(summary);
 
