@@ -152,5 +152,21 @@ const { title, author, genres } = book;
 console.log(title, author, genres);
 
 // Array
-const [primaryGenre, secondGenre] = genres;
-console.log(primaryGenre, secondGenre);
+// Rest Operator / `...otherGenres` MUST be at the end otherwise `...` wouldn't work
+const [primaryGenre, secondGenre, ...otherGenres] = genres;
+console.log(primaryGenre, secondGenre, otherGenres);
+
+// Spread Operator on Array
+const newGenres = [...genres, "epic fantasy"];
+console.log(newGenres);
+
+// Spread Operator on Array
+// `...book` has to come first IF overwrite existing properties like `pages`
+const updatedBook = {
+  ...book,
+  // Add new property
+  moviePublicationDate: "1990-12-03",
+  // Overwrite existing property
+  pages: 1220,
+};
+console.log(updatedBook);
