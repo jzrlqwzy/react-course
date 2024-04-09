@@ -148,7 +148,7 @@ const book = getBook(2);
 book;
 
 // Object
-const { title, author, genres } = book;
+const { title, author, genres, pages, publicationDate } = book;
 console.log(title, author, genres);
 
 // Array
@@ -170,3 +170,10 @@ const updatedBook = {
   pages: 1220,
 };
 console.log(updatedBook);
+
+// Template Literals
+const summary = `${title}, is a ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}`;
+console.log(publicationDate);
+console.log(summary);
