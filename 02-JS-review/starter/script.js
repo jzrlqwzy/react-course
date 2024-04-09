@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Desctructuring
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 // Object
@@ -186,3 +186,27 @@ console.log(summary);
 // Ternary Operator
 const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
 pagesRange;
+
+// Short circuiting and Logical Operators
+// &&  ||
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// Falsy value: 0, '', null, undefined, NaN
+console.log("John" && "name");
+console.log(0 && "some string");
+
+console.log(true || "some string");
+console.log(false || "some string");
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+// `||` DOES NOT work when `0` is counted
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "NO DATA";
+countWrong;
+
+// Nullish Coelescing Operator:
+// return second value if the first value is null or undefined
+const countWrong1 = book.reviews.librarything.reviewsCount ?? "NO DATA";
+countWrong1;
