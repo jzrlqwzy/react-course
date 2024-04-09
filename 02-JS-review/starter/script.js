@@ -187,7 +187,7 @@ console.log(summary);
 const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
 pagesRange;
 
-// Short circuiting and Logical Operators
+// Short circuiting
 // &&  ||
 console.log(hasMovieAdaptation && "This book has a movie");
 
@@ -210,3 +210,14 @@ countWrong;
 // return second value if the first value is null or undefined
 const countWrong1 = book.reviews.librarything.reviewsCount ?? "NO DATA";
 countWrong1;
+
+// Optional Chaining
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  goodreads;
+  librarything;
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
