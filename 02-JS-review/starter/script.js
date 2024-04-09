@@ -219,5 +219,22 @@ function getTotalReviewCount(book) {
   librarything;
   return goodreads + librarything;
 }
-
 console.log(getTotalReviewCount(book));
+
+// Array Methods:
+// map()
+const books = getBooks();
+books;
+
+const titles = books.map((book) => book.title);
+titles;
+
+const essentialData = books.map((book) => {
+  return {
+    author: book.author,
+    title: book.title,
+    reviewsCount: getTotalReviewCount(book),
+  };
+});
+
+essentialData;
