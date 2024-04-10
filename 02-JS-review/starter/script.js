@@ -1,3 +1,4 @@
+/*
 const data = [
   {
     id: 1,
@@ -293,3 +294,25 @@ const booksAfterUpdate = books.map((book) =>
     : book
 );
 booksAfterUpdate;
+*/
+
+// Promise
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+console.log("John");
+
+// Async / Await
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  console.log(data);
+
+  return data;
+}
+
+const todos = getTodos();
+// will print a pending PROMISE since async function always returns a promise and not knowing what the returned `data` actually is an object.
+console.log(todos);
+console.log("John");
