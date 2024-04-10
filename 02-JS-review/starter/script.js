@@ -254,3 +254,15 @@ adventurousBooks;
 // reduce()
 const pagesAllBooks = books.reduce((acc, item) => acc + item.pages, 0);
 pagesAllBooks;
+
+// sort()
+// MUTATE original array, need to copy to avoid it
+// a - b  Ascending
+// b - a  Descendingg
+const arr = [3, 7, 2, 1, 9];
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
